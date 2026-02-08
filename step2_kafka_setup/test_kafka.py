@@ -1,42 +1,70 @@
-from kafka import KafkaProducer, KafkaConsumer
-import json
-import time
+"""
+Script de test de connexion à Kafka
+"""
 
-# Kafka connection details
-KAFKA_BROKER = 'localhost:9092'
-TOPIC_NAME = 'test_topic'
+from kafka import KafkaProducer, KafkaConsumer, KafkaAdminClient
+from kafka.admin import NewTopic
+import json
+
+BOOTSTRAP_SERVERS = ['localhost:9092']
+TOPIC_NAME = 'blood-pressure-observations'
+
+def test_connection():
+    try:
+        admin_client = KafkaAdminClient(bootstrap_servers=BOOTSTRAP_SERVERS)
+        print("✅ Connexion Kafka réussie!")
+        return True
+    except Exception as e:
+        print(f"❌ Erreur: {e}")
+        return False
+
+def create_topic():
+    try:
+        admin_client = KafkaAdminClient(bootstrap_servers=BOOTSTRAP_SERVERS)
+        topic = NewTopic(
+            name=TOPIC_NAME,
+            num_partitions=3,
+            replication_factor=1
+        )
+        admin_client.create_topics(new_topics=[topic], validate_only=False)
+        print(f"✅ Topic '{TOPIC_NAME}' créé!")
+        return True
+    except Exception as e:
+        if "already exists" in str(e):
+            print(f"⚠️  Topic '{TOPIC_NAME}' existe déjà")
+            return True
+        print(f"❌ Erreur: {e}")
+        return False
 
 def test_producer():
-    # Create a producer
-    producer = KafkaProducer(bootstrap_servers=[KAFKA_BROKER],
-                             value_serializer=lambda v: json.dumps(v).encode('utf-8'))
-    
-    # Send test messages
-    for i in range(5):
-        message = {'number': i}
-        producer.send(TOPIC_NAME, value=message)
-        print(f'Sent: {message}')
-        time.sleep(1)
-    
-    producer.flush()
-    producer.close()
+    try:
+        producer = KafkaProducer(
+            bootstrap_servers=BOOTSTRAP_SERVERS,
+            value_serializer=lambda v: json.dumps(v).encode('utf-8')
+        )
+        
+        test_message = {
+            "resourceType": "Observation",
+            "id": "TEST-001",
+            "status": "final",
+            "component": [
+                {"code": {"coding": [{"code": "8480-6"}]}, "valueQuantity": {"value": 120}},
+                {"code": {"coding": [{"code": "8462-4"}]}, "valueQuantity": {"value": 80}}
+            ]
+        }
+        
+        producer.send(TOPIC_NAME, test_message)
+        producer.flush()
+        producer.close()
+        print("✅ Message test envoyé!")
+        return True
+    except Exception as e:
+        print(f"❌ Erreur Producer: {e}")
+        return False
 
-def test_consumer():
-    # Create a consumer
-    consumer = KafkaConsumer(TOPIC_NAME,
-                             bootstrap_servers=[KAFKA_BROKER],
-                             auto_offset_reset='earliest',
-                             enable_auto_commit=True,
-                             group_id='test_group',
-                             value_deserializer=lambda m: json.loads(m.decode('utf-8')))
-    
-    # Read messages from the topic
-    print('Consuming messages...')
-    for message in consumer:
-        print(f'Received: {message.value}')
-
-if __name__ == '__main__':
-    print("Testing Kafka Producer...")
+if __name__ == "__main__":
+    print("\n🧪 TEST DE KAFKA\n")
+    test_connection()
+    create_topic()
     test_producer()
-    print("Testing Kafka Consumer...")
-    test_consumer()
+    print("\n✅ Tests terminés!\n")
