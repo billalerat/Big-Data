@@ -1,25 +1,19 @@
-# test_kafka.py
+# Test Kafka Connectivity
 
-import kafka
-from kafka import KafkaConsumer
+from kafka import KafkaProducer, KafkaConsumer
+from kafka.errors import NoBrokersAvailable
 
-# Define the Kafka server details
-KAFKA_SERVER = 'localhost:9092'
+def test_kafka_connectivity(broker_address):
+    try:
+        producer = KafkaProducer(bootstrap_servers=broker_address)
+        consumer = KafkaConsumer('test_topic', bootstrap_servers=broker_address)
+        producer.close()
+        consumer.close()
+        print("Kafka connection successful!")
+    except NoBrokersAvailable:
+        print("No Kafka brokers available!")
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
-# Create a consumer
-consumer = KafkaConsumer(
-    'test-topic',  # replace with your topic
-    bootstrap_servers=KAFKA_SERVER,
-    auto_offset_reset='earliest',
-    enable_auto_commit=True,
-    group_id='test-group'
-)
-
-# Test Kafka connectivity
-try:
-    for message in consumer:
-        print(f'Received message: {message.value}')
-except Exception as e:
-    print(f'Error occurred: {e}')
-finally:
-    consumer.close()
+if __name__ == '__main__':
+    test_kafka_connectivity('localhost:9092')  # Change to your broker address
