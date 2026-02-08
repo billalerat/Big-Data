@@ -1,51 +1,50 @@
-from kafka import KafkaProducer, KafkaConsumer, TopicPartition
 import time
-import json
+from kafka import KafkaProducer, KafkaConsumer, KafkaAdminClient
+from kafka.errors import KafkaError
 
-# Kafka configuration
+# Configuration
 KAFKA_BROKER = 'localhost:9092'
 TOPIC_NAME = 'test_topic'
 
-# Function to test Kafka connection
-
-def test_connection():
-    try:
-        producer = KafkaProducer(bootstrap_servers=KAFKA_BROKER)
-        producer.close()
-        print('Kafka connection successful.')
-    except Exception as e:
-        print(f'Error connecting to Kafka: {e}')
-
-# Function to create topic
-
-def create_topic():
-    from kafka.admin import KafkaAdminClient, NewTopic
-    admin_client = KafkaAdminClient(bootstrap_servers=KAFKA_BROKER)
-    topic = NewTopic(name=TOPIC_NAME, num_partitions=1, replication_factor=1)
-    admin_client.create_topics([topic])
-    print(f'Topic {TOPIC_NAME} created successfully.')
-
-# Function to test producer
+# Function to test Kafka Producer
 
 def test_producer():
     producer = KafkaProducer(bootstrap_servers=KAFKA_BROKER)
-    for i in range(5):
-        message = json.dumps({'number': i}).encode('utf-8')
-        producer.send(TOPIC_NAME, value=message)
-        print(f'Sent: {message}')
-        time.sleep(1)  # Sleep for a bit before sending the next message
-    producer.close()
+    try:
+        future = producer.send(TOPIC_NAME, key=b'test_key', value=b'test_value')
+        record_metadata = future.get(timeout=10)  # wait until it is sent
+        print(f'Produced to {record_metadata.topic} partition {record_metadata.partition} offset {record_metadata.offset}')
+    except KafkaError as e:
+        print(f'Error producing message: {e}')
+    finally:
+        producer.close()
 
-# Function to test consumer
+# Function to test Kafka Consumer
 
 def test_consumer():
-    consumer = KafkaConsumer(TOPIC_NAME, bootstrap_servers=KAFKA_BROKER, auto_offset_reset='earliest')
+    consumer = KafkaConsumer(
+        TOPIC_NAME,
+        bootstrap_servers=KAFKA_BROKER,
+        auto_offset_reset='earliest',
+        enable_auto_commit=True,
+        group_id='test_group'
+    )
     for message in consumer:
-        print(f'Received: {message.value.decode()}')
-        time.sleep(1)  # Process messages one by one
+        print(f'Consumed message: {message.value} from topic {message.topic}')
 
+# Function to test topic creation
+
+def test_topic_creation():
+    admin_client = KafkaAdminClient(bootstrap_servers=KAFKA_BROKER)
+    try:
+        admin_client.create_topics([TOPIC_NAME])
+        print(f'Topic {TOPIC_NAME} created successfully.')
+    except Exception as e:
+        print(f'Error creating topic: {e}')
+
+# Testing
 if __name__ == '__main__':
-    test_connection()
-    create_topic()
+    test_topic_creation()
+    time.sleep(5)  # Ensure the topic is created before producing
     test_producer()
     test_consumer()
