@@ -7,28 +7,39 @@ Date: 2026
 """
 
 import json
+import os
 import uuid
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from typing import Dict, List, Any
 from faker import Faker
 
 # Configuration
 fake = Faker('fr_FR')
-Faker.seed(42)  # Pour reproductibilité
+random_seed = os.getenv('FHIR_RANDOM_SEED')
+if random_seed:
+    Faker.seed(int(random_seed))  # Reproductibilite optionnelle via env var
 
 # Seuils médicaux de pression artérielle (mmHg)
 THRESHOLDS = {
     'systolic': {
         'normal_min': 90,
-        'normal_max': 140,
-        'hypotension': 90,  # < 90
-        'hypertension': 140  # > 140
+        'normal_max': 119,  # < 120
+        'elevated_min': 120,
+        'elevated_max': 129,
+        'stage1_min': 130,
+        'stage1_max': 139,
+        'stage2_min': 140,
+        'crisis_min': 181,
+        'hypotension': 90  # < 90
     },
     'diastolic': {
         'normal_min': 60,
-        'normal_max': 90,
-        'hypotension': 60,  # < 60
-        'hypertension': 90  # > 90
+        'normal_max': 79,  # < 80
+        'stage1_min': 80,
+        'stage1_max': 89,
+        'stage2_min': 90,
+        'crisis_min': 121,
+        'hypotension': 60  # < 60
     }
 }
 
@@ -60,37 +71,43 @@ class FHIRObservationGenerator:
             Dict avec systolic et diastolic
         """
         if abnormal:
-            # Génère une pression anormale
-            choice = fake.random_int(0, 3)
+            # Génère une pression anormale selon les categories
+            choice = fake.random_int(0, 4)
             if choice == 0:
-                # Hypertension (systolique élevée)
+                # Elevated: 120-129 et < 80
                 return {
-                    'systolic': fake.random_int(141, 180),
-                    'diastolic': fake.random_int(60, 95)
+                    'systolic': fake.random_int(120, 129),
+                    'diastolic': fake.random_int(60, 79)
                 }
             elif choice == 1:
-                # Hypertension (diastolique élevée)
+                # Hypertension stage 1
                 return {
-                    'systolic': fake.random_int(90, 140),
-                    'diastolic': fake.random_int(91, 120)
+                    'systolic': fake.random_int(130, 139),
+                    'diastolic': fake.random_int(80, 89)
                 }
             elif choice == 2:
-                # Hypotension (systolique basse)
+                # Hypertension stage 2
                 return {
-                    'systolic': fake.random_int(70, 89),
-                    'diastolic': fake.random_int(40, 59)
+                    'systolic': fake.random_int(140, 180),
+                    'diastolic': fake.random_int(90, 120)
+                }
+            elif choice == 3:
+                # Hypertensive crisis
+                return {
+                    'systolic': fake.random_int(181, 220),
+                    'diastolic': fake.random_int(121, 140)
                 }
             else:
-                # Hypotension (diastolique basse)
+                # Hypotension
                 return {
-                    'systolic': fake.random_int(90, 140),
+                    'systolic': fake.random_int(70, 89),
                     'diastolic': fake.random_int(40, 59)
                 }
         else:
             # Génère une pression normale
             return {
-                'systolic': fake.random_int(90, 140),
-                'diastolic': fake.random_int(60, 90)
+                'systolic': fake.random_int(90, 119),
+                'diastolic': fake.random_int(60, 79)
             }
     
     @staticmethod
@@ -107,26 +124,75 @@ class FHIRObservationGenerator:
         """
         is_anomaly = False
         anomaly_types = []
-        
-        # Vérification systolique
-        if systolic > THRESHOLDS['systolic']['hypertension']:
+
+        # Hypotension (priorite si en dessous des seuils)
+        if systolic < THRESHOLDS['systolic']['hypotension'] or diastolic < THRESHOLDS['diastolic']['hypotension']:
             is_anomaly = True
-            anomaly_types.append('HYPERTENSION_SYSTOLIC')
-        elif systolic < THRESHOLDS['systolic']['hypotension']:
+            if systolic < THRESHOLDS['systolic']['hypotension']:
+                anomaly_types.append('HYPOTENSION_SYSTOLIC')
+            if diastolic < THRESHOLDS['diastolic']['hypotension']:
+                anomaly_types.append('HYPOTENSION_DIASTOLIC')
+            return {
+                'is_anomaly': is_anomaly,
+                'anomaly_types': anomaly_types,
+                'category': 'HYPOTENSION'
+            }
+
+        # Hypertensive crisis
+        if systolic >= THRESHOLDS['systolic']['crisis_min'] or diastolic >= THRESHOLDS['diastolic']['crisis_min']:
             is_anomaly = True
-            anomaly_types.append('HYPOTENSION_SYSTOLIC')
-        
-        # Vérification diastolique
-        if diastolic > THRESHOLDS['diastolic']['hypertension']:
+            anomaly_types.append('HYPERTENSIVE_CRISIS')
+            return {
+                'is_anomaly': is_anomaly,
+                'anomaly_types': anomaly_types,
+                'category': 'HYPERTENSIVE_CRISIS'
+            }
+
+        # Hypertension stage 2
+        if systolic >= THRESHOLDS['systolic']['stage2_min'] or diastolic >= THRESHOLDS['diastolic']['stage2_min']:
             is_anomaly = True
-            anomaly_types.append('HYPERTENSION_DIASTOLIC')
-        elif diastolic < THRESHOLDS['diastolic']['hypotension']:
+            if systolic >= 140:
+                anomaly_types.append('HYPERTENSION_SYSTOLIC')
+            if diastolic >= 90:
+                anomaly_types.append('HYPERTENSION_DIASTOLIC')
+            return {
+                'is_anomaly': is_anomaly,
+                'anomaly_types': anomaly_types,
+                'category': 'HYPERTENSION_STAGE_2'
+            }
+
+        # Hypertension stage 1
+        if (
+            THRESHOLDS['systolic']['stage1_min'] <= systolic <= THRESHOLDS['systolic']['stage1_max']
+            or THRESHOLDS['diastolic']['stage1_min'] <= diastolic <= THRESHOLDS['diastolic']['stage1_max']
+        ):
             is_anomaly = True
-            anomaly_types.append('HYPOTENSION_DIASTOLIC')
-        
+            if THRESHOLDS['systolic']['stage1_min'] <= systolic <= THRESHOLDS['systolic']['stage1_max']:
+                anomaly_types.append('HYPERTENSION_SYSTOLIC')
+            if THRESHOLDS['diastolic']['stage1_min'] <= diastolic <= THRESHOLDS['diastolic']['stage1_max']:
+                anomaly_types.append('HYPERTENSION_DIASTOLIC')
+            return {
+                'is_anomaly': is_anomaly,
+                'anomaly_types': anomaly_types,
+                'category': 'HYPERTENSION_STAGE_1'
+            }
+
+        # Elevated
+        if (
+            THRESHOLDS['systolic']['elevated_min'] <= systolic <= THRESHOLDS['systolic']['elevated_max']
+            and diastolic <= THRESHOLDS['diastolic']['normal_max']
+        ):
+            return {
+                'is_anomaly': False,
+                'anomaly_types': [],
+                'category': 'ELEVATED'
+            }
+
+        # Normal
         return {
-            'is_anomaly': is_anomaly,
-            'anomaly_types': anomaly_types
+            'is_anomaly': False,
+            'anomaly_types': [],
+            'category': 'NORMAL'
         }
     
     @staticmethod
@@ -149,7 +215,7 @@ class FHIRObservationGenerator:
             Dict représentant la ressource FHIR Observation
         """
         if observation_date is None:
-            observation_date = datetime.utcnow()
+            observation_date = datetime.now(timezone.utc)
         
         observation_id = FHIRObservationGenerator.generate_observation_id()
         
@@ -182,10 +248,10 @@ class FHIRObservationGenerator:
                 ]
             },
             "subject": {
-                "reference": f"Patient/{{patient_id}}"
+                "reference": f"Patient/{patient_id}"
             },
-            "effectiveDateTime": observation_date.isoformat() + "Z",
-            "issued": observation_date.isoformat() + "Z",
+            "effectiveDateTime": observation_date.isoformat().replace("+00:00", "Z"),
+            "issued": observation_date.isoformat().replace("+00:00", "Z"),
             "component": [
                 {
                     "code": {
@@ -241,7 +307,11 @@ class FHIRObservationGenerator:
                 },
                 {
                     "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
-                    "valueString": ",".join(anomaly_info['anomaly_types']) if anomaly_info['anomaly_types'] else "NORMAL"
+                    "valueString": ",".join(anomaly_info['anomaly_types']) if anomaly_info['anomaly_types'] else "NONE"
+                },
+                {
+                    "url": "http://example.com/fhir/StructureDefinition/bp-category",
+                    "valueString": anomaly_info['category']
                 }
             ]
         }
@@ -280,7 +350,7 @@ def generate_batch_observations(
             bp = generator.generate_blood_pressure(abnormal=is_abnormal)
             
             # Générer la date (observations récentes)
-            observation_date = datetime.utcnow() - timedelta(hours=fake.random_int(0, 72))
+            observation_date = datetime.now(timezone.utc) - timedelta(hours=fake.random_int(0, 72))
             
             # Créer l'observation FHIR
             observation = generator.create_fhir_observation(
@@ -344,6 +414,17 @@ def print_statistics(observations: List[Dict[str, Any]]):
         print("\n📋 Détail des anomalies:")
         for atype, count in sorted(anomaly_types.items()):
             print(f"   - {atype}: {count}")
+
+    # Compter les categories
+    category_counts = {}
+    for obs in observations:
+        category = obs['extension'][2]['valueString']
+        category_counts[category] = category_counts.get(category, 0) + 1
+
+    if category_counts:
+        print("\n🏷️  Détail des categories:")
+        for category, count in sorted(category_counts.items()):
+            print(f"   - {category}: {count}")
     
     # Patients uniques
     patients = set(obs['subject']['reference'].replace('Patient/', '') for obs in observations)
@@ -367,8 +448,3 @@ if __name__ == "__main__":
     
     # Sauvegarder dans un fichier
     save_observations_to_file(observations)
-    
-    # Afficher un exemple
-    print("\n📝 Exemple d'observation FHIR générée:")
-    print("-" * 60)
-    print(json.dumps(observations[0], indent=2, ensure_ascii=False))
