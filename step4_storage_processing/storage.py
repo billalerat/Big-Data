@@ -1,18 +1,20 @@
+from pymongo import MongoClient
+
 class MongoDBStorage:
-    def __init__(self, db_name, collection_name):
-        from pymongo import MongoClient
-        self.client = MongoClient()
+    def __init__(self, uri, db_name):
+        self.client = MongoClient(uri)
         self.db = self.client[db_name]
-        self.collection = self.db[collection_name]
 
     def insert_observation(self, observation):
-        self.collection.insert_one(observation)
+        """Insert a new FHIR observation into the database."""
+        result = self.db.observations.insert_one(observation)
+        return str(result.inserted_id)
 
-    def find_observation(self, observation_id):
-        return self.collection.find_one({'id': observation_id})
+    def get_observation(self, observation_id):
+        """Retrieve a FHIR observation by ID."""
+        observation = self.db.observations.find_one({"_id": observation_id})
+        return observation
 
-    def update_observation(self, observation_id, updated_data):
-        self.collection.update_one({'id': observation_id}, {'$set': updated_data})
-
-    def delete_observation(self, observation_id):
-        self.collection.delete_one({'id': observation_id})
+    def close(self):
+        """Close the database connection."""
+        self.client.close()
