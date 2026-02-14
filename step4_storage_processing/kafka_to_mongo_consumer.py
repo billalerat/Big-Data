@@ -1,65 +1,25 @@
-"""
-ÉTAPE 4 : Consumer Kafka to MongoDB
-Consumes messages from Kafka and stores them in MongoDB
-"""
-
 from kafka import KafkaConsumer
-from storage import MongoDBStorage
+from pymongo import MongoClient
 import json
 
-# Configuration
-KAFKA_BOOTSTRAP_SERVERS = ['localhost:9092']
-KAFKA_TOPIC = 'blood-pressure-observations'
-KAFKA_GROUP_ID = 'mongodb-consumer-group'
+# Set up Kafka consumer
+consumer = KafkaConsumer(
+    'your_topic',  # replace with your Kafka topic
+    bootstrap_servers=['your_kafka_server:9092'],  # replace with your Kafka server
+    auto_offset_reset='earliest',
+    enable_auto_commit=True,
+    group_id='your_group_id'
+)
 
-class KafkaToMongoDBConsumer:
-    """Consumer that reads from Kafka and writes to MongoDB"""
-    
-    def __init__(self, mongo_db_name, mongo_collection_name):
-        self.consumer = KafkaConsumer(
-            KAFKA_TOPIC,
-            bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
-            group_id=KAFKA_GROUP_ID,
-            value_deserializer=lambda m: json.loads(m.decode('utf-8')),
-            auto_offset_reset='earliest',
-            enable_auto_commit=True
-        )
-        self.storage = MongoDBStorage(mongo_db_name, mongo_collection_name)
-    
-    def consume_and_store(self, max_messages=None):
-        """Consume messages and store in MongoDB"""
-        print("\n" + "="*60)
-        print("📥 KAFKA TO MONGODB CONSUMER")
-        print("="*60 + "\n")
-        
-        message_count = 0
-        stored_count = 0
-        
-        try:
-            for message in self.consumer:
-                message_count += 1
-                
-                observation = message.value
-                
-                # Store in MongoDB
-                result = self.storage.insert_observation(observation)
-                stored_count += 1
-                
-                print(f"[{message_count}] Stored observation {observation.get('id')} - \
-                      f"MongoDB ID: {result.inserted_id}")
-                
-                if max_messages and message_count >= max_messages:
-                    break
-        
-        except KeyboardInterrupt:
-            print("\n⏸️ Consumer stopped")
-        
-        finally:
-            self.storage.close()
-        
-        print(f"\n✅ {stored_count} observations stored in MongoDB")
-        print("="*60 + "\n")
+# Set up MongoDB client
+mongo_client = MongoClient('mongodb://your_mongo_server:27017/')  # replace with your MongoDB server
+mongo_db = mongo_client['your_database']  # replace with your database name
+mongo_collection = mongo_db['your_collection']  # replace with your collection name
 
-if __name__ == "__main__":
-    consumer = KafkaToMongoDBConsumer('blood_pressure_db', 'observations')
-    consumer.consume_and_store()
+# Consume messages from Kafka and store them in MongoDB
+for message in consumer:
+    # Decode the message
+    message_value = json.loads(message.value.decode('utf-8'))
+    # Store the message in MongoDB
+    mongo_collection.insert_one(message_value)
+    print('Stored message in MongoDB:', message_value)
