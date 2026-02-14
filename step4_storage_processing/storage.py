@@ -1,1 +1,36 @@
-from pymongo import MongoClient\n\nclass MongoDBStorage:\n    def __init__(self, uri):\n        self.client = MongoClient(uri)\n        self.db = self.client['fhir_db']  # Database name\n\n    def store_observation(self, observation):\n        observation_id = observation['id']\n        self.db.observations.update_one(\n            {'id': observation_id}, \n            {'$set': observation}, \n            upsert=True\n        )\n\n    def get_observation(self, observation_id):\n        return self.db.observations.find_one({'id': observation_id})\n\n    def delete_observation(self, observation_id):\n        self.db.observations.delete_one({'id': observation_id})\n\n# Example usage:\n# storage = MongoDBStorage('mongodb://localhost:27017/')\n# storage.store_observation({'id': 'obs1', 'value': 123, 'status': 'final'})
+# MongoDB Storage for FHIR Observations
+
+"""
+This module provides functions to store FHIR observations in a MongoDB database.
+"""
+
+from pymongo import MongoClient
+
+class MongoDBStorage:
+    """
+    A class to manage storage of FHIR observations in MongoDB.
+    """
+    def __init__(self, db_name, collection_name):
+        self.client = MongoClient()
+        self.db = self.client[db_name]
+        self.collection = self.db[collection_name]
+
+    def insert_observation(self, observation):
+        """
+        Insert a FHIR observation into the database.
+        :param observation: A dictionary containing the observation data.
+        """
+        return self.collection.insert_one(observation)
+
+    def find_observations(self, query):
+        """
+        Find observations in the database based on a query.
+        :param query: A dictionary representing the query criteria.
+        """
+        return self.collection.find(query)
+
+    def close(self):
+        """
+        Close the MongoDB connection.
+        """
+        self.client.close()
