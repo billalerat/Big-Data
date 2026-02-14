@@ -1,0 +1,2732 @@
+[
+  {
+    "resourceType": "Observation",
+    "id": "OBS-8ACE195DE016",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-E4A05D86"
+    },
+    "effectiveDateTime": "2026-02-07T16:38:55.500463Z",
+    "issued": "2026-02-07T16:38:55.500463Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 201,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 138,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSIVE_CRISIS"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSIVE_CRISIS"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-55FF3ACD3683",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-E4A05D86"
+    },
+    "effectiveDateTime": "2026-02-05T23:38:55.500517Z",
+    "issued": "2026-02-05T23:38:55.500517Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 98,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 69,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-D6DCA5E171F3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-E4A05D86"
+    },
+    "effectiveDateTime": "2026-02-07T08:38:55.500537Z",
+    "issued": "2026-02-07T08:38:55.500537Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 94,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 66,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-3B1B56BE22A1",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-716355D3"
+    },
+    "effectiveDateTime": "2026-02-07T09:38:55.500556Z",
+    "issued": "2026-02-07T09:38:55.500556Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 97,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 74,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-C3680290008F",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-716355D3"
+    },
+    "effectiveDateTime": "2026-02-07T08:38:55.500567Z",
+    "issued": "2026-02-07T08:38:55.500567Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 91,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 77,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-F1C9914CBBBF",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-716355D3"
+    },
+    "effectiveDateTime": "2026-02-08T21:38:55.500581Z",
+    "issued": "2026-02-08T21:38:55.500581Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 72,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 56,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPOTENSION_SYSTOLIC,HYPOTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPOTENSION"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-DE34E458EBC9",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-72347ED6"
+    },
+    "effectiveDateTime": "2026-02-07T22:38:55.500594Z",
+    "issued": "2026-02-07T22:38:55.500594Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 183,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 140,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSIVE_CRISIS"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSIVE_CRISIS"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-DF141D2A69C5",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-72347ED6"
+    },
+    "effectiveDateTime": "2026-02-07T12:38:55.500606Z",
+    "issued": "2026-02-07T12:38:55.500606Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 97,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 79,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-9708EA038004",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-72347ED6"
+    },
+    "effectiveDateTime": "2026-02-07T12:38:55.500617Z",
+    "issued": "2026-02-07T12:38:55.500617Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 110,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 65,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-5AB95A7114CB",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-2996069D"
+    },
+    "effectiveDateTime": "2026-02-07T19:38:55.500629Z",
+    "issued": "2026-02-07T19:38:55.500629Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 100,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 70,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-5379B4C6C505",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-2996069D"
+    },
+    "effectiveDateTime": "2026-02-06T03:38:55.500642Z",
+    "issued": "2026-02-06T03:38:55.500642Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 75,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 47,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPOTENSION_SYSTOLIC,HYPOTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPOTENSION"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-560FC2A0BC00",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-2996069D"
+    },
+    "effectiveDateTime": "2026-02-07T22:38:55.500657Z",
+    "issued": "2026-02-07T22:38:55.500657Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 208,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 135,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSIVE_CRISIS"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSIVE_CRISIS"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-E7A9183CA2D2",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-3C319305"
+    },
+    "effectiveDateTime": "2026-02-08T09:38:55.500671Z",
+    "issued": "2026-02-08T09:38:55.500671Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 136,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 85,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSION_SYSTOLIC,HYPERTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSION_STAGE_1"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-E9D69AE4E024",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-3C319305"
+    },
+    "effectiveDateTime": "2026-02-06T07:38:55.500683Z",
+    "issued": "2026-02-06T07:38:55.500683Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 110,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 70,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-FE3614A71484",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-3C319305"
+    },
+    "effectiveDateTime": "2026-02-07T00:38:55.500695Z",
+    "issued": "2026-02-07T00:38:55.500695Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 177,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 113,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSION_SYSTOLIC,HYPERTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSION_STAGE_2"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-2C70479516C5",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-D9FE43EA"
+    },
+    "effectiveDateTime": "2026-02-06T21:38:55.500709Z",
+    "issued": "2026-02-06T21:38:55.500709Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 141,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 91,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSION_SYSTOLIC,HYPERTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSION_STAGE_2"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-82B2EB7F88D7",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-D9FE43EA"
+    },
+    "effectiveDateTime": "2026-02-08T18:38:55.500719Z",
+    "issued": "2026-02-08T18:38:55.500719Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 116,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 62,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-A05C8D2F4BE9",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-D9FE43EA"
+    },
+    "effectiveDateTime": "2026-02-07T23:38:55.500733Z",
+    "issued": "2026-02-07T23:38:55.500733Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 138,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 80,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSION_SYSTOLIC,HYPERTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSION_STAGE_1"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-D0F90FF681C8",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-7619C24B"
+    },
+    "effectiveDateTime": "2026-02-06T18:38:55.500744Z",
+    "issued": "2026-02-06T18:38:55.500744Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 90,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 62,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-78619AECB5F2",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-7619C24B"
+    },
+    "effectiveDateTime": "2026-02-08T02:38:55.500756Z",
+    "issued": "2026-02-08T02:38:55.500756Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 109,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 73,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-000E0D59D6BF",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-7619C24B"
+    },
+    "effectiveDateTime": "2026-02-06T14:38:55.500765Z",
+    "issued": "2026-02-06T14:38:55.500765Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 95,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 71,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-57E6822509A5",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-349A0343"
+    },
+    "effectiveDateTime": "2026-02-08T18:38:55.500779Z",
+    "issued": "2026-02-08T18:38:55.500779Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 103,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 62,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-F265FA6B879D",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-349A0343"
+    },
+    "effectiveDateTime": "2026-02-06T02:38:55.500789Z",
+    "issued": "2026-02-06T02:38:55.500789Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 106,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 65,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-A61AEC67BEF8",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-349A0343"
+    },
+    "effectiveDateTime": "2026-02-08T12:38:55.500808Z",
+    "issued": "2026-02-08T12:38:55.500808Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 71,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 48,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPOTENSION_SYSTOLIC,HYPOTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPOTENSION"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-640E16875F73",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-19941D4E"
+    },
+    "effectiveDateTime": "2026-02-06T19:38:55.500821Z",
+    "issued": "2026-02-06T19:38:55.500821Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 197,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 125,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSIVE_CRISIS"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSIVE_CRISIS"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-6802ED4635D8",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-19941D4E"
+    },
+    "effectiveDateTime": "2026-02-08T07:38:55.500833Z",
+    "issued": "2026-02-08T07:38:55.500833Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 139,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 87,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPERTENSION_SYSTOLIC,HYPERTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPERTENSION_STAGE_1"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-78AF91007D3C",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-19941D4E"
+    },
+    "effectiveDateTime": "2026-02-07T13:38:55.500843Z",
+    "issued": "2026-02-07T13:38:55.500843Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 117,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 69,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-8C1BCCE9D7D3",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-0148F43A"
+    },
+    "effectiveDateTime": "2026-02-06T23:38:55.500854Z",
+    "issued": "2026-02-06T23:38:55.500854Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 108,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 63,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-47B5CA176C32",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-0148F43A"
+    },
+    "effectiveDateTime": "2026-02-08T10:38:55.500865Z",
+    "issued": "2026-02-08T10:38:55.500865Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 71,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 52,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "A",
+            "display": "Abnormal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": true
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "HYPOTENSION_SYSTOLIC,HYPOTENSION_DIASTOLIC"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "HYPOTENSION"
+      }
+    ]
+  },
+  {
+    "resourceType": "Observation",
+    "id": "OBS-3FB8507DBC4D",
+    "status": "final",
+    "category": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+            "code": "vital-signs",
+            "display": "Vital Signs"
+          }
+        ]
+      }
+    ],
+    "code": {
+      "coding": [
+        {
+          "system": "http://loinc.org",
+          "code": "85354-9",
+          "display": "Blood pressure panel with all children optional"
+        }
+      ]
+    },
+    "subject": {
+      "reference": "Patient/PAT-0148F43A"
+    },
+    "effectiveDateTime": "2026-02-08T21:38:55.500875Z",
+    "issued": "2026-02-08T21:38:55.500875Z",
+    "component": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 113,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "valueQuantity": {
+          "value": 64,
+          "unit": "mmHg",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      }
+    ],
+    "interpretation": [
+      {
+        "coding": [
+          {
+            "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+            "code": "N",
+            "display": "Normal"
+          }
+        ]
+      }
+    ],
+    "extension": [
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-detection",
+        "valueBoolean": false
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/anomaly-types",
+        "valueString": "NONE"
+      },
+      {
+        "url": "http://example.com/fhir/StructureDefinition/bp-category",
+        "valueString": "NORMAL"
+      }
+    ]
+  }
+]
